@@ -1,26 +1,34 @@
 // import PropTypes from 'prop-types'
 
 import { NavLink } from "react-router-dom";
+const activeClass = ({ isActive }) =>
+  isActive ? "text-green-600 border-2 border-green-600" : "text-gray-600";
 
+const links = () => {
+  return (
+    <>
+      <li>
+        {" "}
+        <NavLink to="/" className={activeClass}>
+          Home
+        </NavLink>
+      </li>
+      <li>
+        {" "}
+        <NavLink to="/listed-books" className={activeClass}>
+          Listed Books
+        </NavLink>
+      </li>
+
+      <li>
+        <NavLink to="/pages-to-read" className={activeClass}>
+          Pages To Read
+        </NavLink>
+      </li>
+    </>
+  );
+};
 function Header() {
-  const links = () => {
-    return (
-      <>
-        <li>
-          {" "}
-          <NavLink to="/">Home</NavLink>
-        </li>
-        <li>
-          {" "}
-          <NavLink to="/listed-books">Listed Books</NavLink>
-        </li>
-
-        <li>
-          <NavLink to="/pages-to-read">Pages To Read</NavLink>
-        </li>
-      </>
-    );
-  };
   return (
     <div>
       <div className="shadow-sm navbar bg-base-100">
