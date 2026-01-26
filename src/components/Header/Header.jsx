@@ -58,14 +58,14 @@ function Header() {
               {links()}
             </ul>
           </div>
-          <a className="text-xl btn btn-ghost">Book Vibe</a>
+          <a className="text-xl font-bold btn btn-ghost">Book Vibe</a>
         </div>
         <div className="hidden navbar-center lg:flex">
           <ul className="gap-4 px-1 menu menu-horizontal">{links()}</ul>
         </div>
         <div className="flex flex-row gap-4 navbar-end">
-          <a className="btn">Sign In</a>
-          <a className="btn">Sign Up</a>
+          <a className="btn bg-[#23be0a] text-white">Sign In</a>
+          <a className="btn bg-[#59c6d2] text-white">Sign Up</a>
         </div>
       </div>
     </div>
