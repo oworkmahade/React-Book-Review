@@ -61,7 +61,7 @@ function Header() {
           <a className="text-xl btn btn-ghost">Book Vibe</a>
         </div>
         <div className="hidden navbar-center lg:flex">
-          <ul className="px-1 menu menu-horizontal">{links()}</ul>
+          <ul className="gap-4 px-1 menu menu-horizontal">{links()}</ul>
         </div>
         <div className="flex flex-row gap-4 navbar-end">
           <a className="btn">Sign In</a>
