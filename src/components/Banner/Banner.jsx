@@ -5,7 +5,6 @@ const Banner = () => {
   const navigate = useNavigate();
 
   const handleViewList = () => {
-    console.log("clicked");
     navigate("/listed-books");
   };
   return (
