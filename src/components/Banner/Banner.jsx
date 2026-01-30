@@ -1,5 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import bannerImg from "../../assets/images/banner.png";
+
 const Banner = () => {
+  const navigate = useNavigate();
+
+  const handleViewList = () => {
+    console.log("clicked");
+    navigate("/listed-books");
+  };
   return (
     <div>
       <div className="flex flex-col items-center justify-between gap-4 p-4 my-4 bg-gray-100 rounded-lg md:flex-row banner-container">
@@ -8,7 +16,11 @@ const Banner = () => {
             Books to freshen up{" "}
             <span className="leading-relaxed">your bookshelf</span>
           </h1>
-          <button className="btn bg-[#23be0a] text-white mt-4">
+
+          <button
+            onClick={handleViewList}
+            className="btn bg-[#23be0a] text-white mt-4"
+          >
             View The List
           </button>
         </div>
