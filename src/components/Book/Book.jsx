@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 
 const Book = ({ book }) => {
   return (
-    <div>
-      <div className="p-4 bg-white shadow-md w-72 rounded-2xl">
+    <div className="border-2 border-gray-200 rounded-lg">
+      <div className="w-full p-4 bg-white shadow-md rounded-2xl">
         {/* Image */}
         <div className="flex justify-center p-6 bg-gray-100 rounded-xl">
           <img
@@ -16,9 +16,6 @@ const Book = ({ book }) => {
 
         {/* Tags */}
         <div className="flex gap-2 mt-4">
-          <span className="px-3 py-1 text-sm text-green-600 bg-green-100 rounded-full">
-            {book.hashtag}
-          </span>
           <span className="px-3 py-1 text-sm text-green-600 bg-green-100 rounded-full">
             {book.hashtag}
           </span>
