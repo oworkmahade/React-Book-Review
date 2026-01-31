@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "img": "https://i.ibb.co/6nYQwKc/book1.jpg",
+    "img": "https://i.ibb.co.com/rfF5PjqC/silent-forest.jpg",
     "title": "The Silent Forest",
     "hashtag": ["#YoungAdult", "#Identity"],
     "author": "By: Emma Collins",
@@ -14,7 +14,7 @@
   },
   {
     "id": 2,
-    "img": "https://i.ibb.co/zZL5GkH/book2.jpg",
+    "img": "https://i.ibb.co.com/b5n82rGF/chashing-tomorrow.jpg",
     "title": "Chasing Tomorrow",
     "hashtag": ["#Motivation", "#SelfGrowth"],
     "author": "By: Daniel Wright",
@@ -27,7 +27,7 @@
   },
   {
     "id": 3,
-    "img": "https://i.ibb.co/7RzM4y9/book3.jpg",
+    "img": "https://i.ibb.co.com/XZ5GPfQD/Echoes-of-the-past.jpg",
     "title": "Echoes of the Past",
     "hashtag": ["#History", "#War"],
     "author": "By: Olivia Brown",
@@ -40,7 +40,7 @@
   },
   {
     "id": 4,
-    "img": "https://i.ibb.co/4d6zYbM/book4.jpg",
+    "img": "https://i.ibb.co.com/TMFYKVSH/mind-over-matter.jpg",
     "title": "Mind Over Matter",
     "hashtag": ["#Psychology", "#MentalHealth"],
     "author": "By: Dr. Steven Hall",
@@ -53,7 +53,7 @@
   },
   {
     "id": 5,
-    "img": "https://i.ibb.co/D8d6d8M/book5.jpg",
+    "img": "https://i.ibb.co.com/r2Mr7xZJ/starts-Beyond-Reach.avif",
     "title": "Stars Beyond Reach",
     "hashtag": ["#SciFi", "#Adventure"],
     "author": "By: Lucas Reed",
@@ -66,7 +66,7 @@
   },
   {
     "id": 6,
-    "img": "https://i.ibb.co/0yN8xYx/book6.jpg",
+    "img": "https://i.ibb.co.com/XfXg78vP/love-in-autmn.jpg",
     "title": "Love in Autumn",
     "hashtag": ["#Romance", "#Drama"],
     "author": "By: Sophia Martinez",
@@ -79,7 +79,7 @@
   },
   {
     "id": 7,
-    "img": "https://i.ibb.co/9N3pX5g/book7.jpg",
+    "img": "https://i.ibb.co.com/VYCBBtm8/the-coding-mind.png",
     "title": "The Coding Mind",
     "hashtag": ["#Technology", "#Programming"],
     "author": "By: Alex Turner",
@@ -92,7 +92,7 @@
   },
   {
     "id": 8,
-    "img": "https://i.ibb.co/j5Y7w8P/book8.jpg",
+    "img": "https://i.ibb.co.com/C5PzCJ4G/hiddentruith.jpg",
     "title": "Hidden Truths",
     "hashtag": ["#Thriller", "#Mystery"],
     "author": "By: Rachel Adams",
@@ -105,7 +105,7 @@
   },
   {
     "id": 9,
-    "img": "https://i.ibb.co/JmCk5XQ/book9.jpg",
+    "img": "https://i.ibb.co.com/ZzmhLdRq/art-of-leadership.jpg",
     "title": "The Art of Leadership",
     "hashtag": ["#Business", "#Leadership"],
     "author": "By: Michael Grant",
@@ -118,7 +118,7 @@
   },
   {
     "id": 10,
-    "img": "https://i.ibb.co/5j6pL1X/book10.jpg",
+    "img": "https://i.ibb.co.com/Nv0FgRJ/winds-of-freedom.jpg",
     "title": "Winds of Freedom",
     "hashtag": ["#YoungAdult", "#Adventure"],
     "author": "By: Noah Wilson",
