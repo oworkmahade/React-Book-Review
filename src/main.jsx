@@ -18,11 +18,11 @@ const router = createBrowserRouter([
       {
         // The Home component is nested inside Root via <Outlet />
         index: true,
-        loader: () => fetch("books.json").then((res) => res.json()),
+        loader: () => fetch("/books.json").then((res) => res.json()),
         element: <Home />,
       },
       {
-        path: "listed-books",
+        path: "/listed-books",
         element: <ListedBooks />,
       },
       {
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
         element: <PagesToRead />,
       },
       {
-        path: "book/:id",
+        path: "/book/:id",
         element: <BookDetails />,
       },
     ],
