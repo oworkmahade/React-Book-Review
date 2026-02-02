@@ -7,7 +7,6 @@ import Root from "./components/Root/Root";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import ListedBooks from "./components/ListedBooks/ListedBooks";
 import PagesToRead from "./components/PagesToRead/PagesToRead";
-import Books from "./components/Books/Books";
 import BookDetails from "./components/BookDetails/BookDetails";
 
 const router = createBrowserRouter([
@@ -18,20 +17,20 @@ const router = createBrowserRouter([
     children: [
       {
         // The Home component is nested inside Root via <Outlet />
-        path: "/",
+        index: true,
         loader: () => fetch("books.json").then((res) => res.json()),
         element: <Home />,
       },
       {
-        path: "/listed-books",
+        path: "listed-books",
         element: <ListedBooks />,
       },
       {
-        path: "/pages-to-read",
+        path: "pages-to-read",
         element: <PagesToRead />,
       },
       {
-        path: "/book/:bookId",
+        path: "book/:id",
         element: <BookDetails />,
       },
     ],

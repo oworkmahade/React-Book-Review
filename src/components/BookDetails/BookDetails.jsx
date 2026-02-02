@@ -2,24 +2,31 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 const BookDetails = () => {
-  const { bookId } = useParams();
-
-  const [books, setBooks] = useState([]);
-  const [bookDetails, setBookDetails] = useState([]);
+  const { id } = useParams();
+  const [selectedBook, setSelectedBook] = useState(null);
 
   useEffect(() => {
     fetch("/books.json")
       .then((res) => res.json())
-      .then((data) => setBooks(data));
-  }, [bookId]);
+      .then((data) => {
+        const book = data.find((b) => b.id === Number(id));
+        setSelectedBook(book);
+      });
+  }, [id]);
 
-  const selectedBook = books.find((book) => book.id === parseInt(bookId));
-  // eslint-disable-next-line react-hooks/set-state-in-render
-  setBookDetails(selectedBook);
+  if (!selectedBook) {
+    return (
+      <div>
+        <p>Loading book details...</p>
+      </div>
+    );
+  }
+
+  console.log(selectedBook);
 
   return (
     <div>
-      <h1 className="p-4 m-4">Book Id: {bookId}</h1>
+      <h1 className="p-4 m-4">{selectedBook?.title}</h1>
     </div>
   );
 };
