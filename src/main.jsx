@@ -8,6 +8,7 @@ import ErrorPage from "./components/ErrorPage/ErrorPage";
 import ListedBooks from "./components/ListedBooks/ListedBooks";
 import PagesToRead from "./components/PagesToRead/PagesToRead";
 import Books from "./components/Books/Books";
+import BookDetails from "./components/BookDetails/BookDetails";
 
 const router = createBrowserRouter([
   {
@@ -29,10 +30,9 @@ const router = createBrowserRouter([
         path: "/pages-to-read",
         element: <PagesToRead />,
       },
-
       {
-        path: "/books",
-        element: <Books />,
+        path: "/book/:bookId",
+        element: <BookDetails />,
       },
     ],
   },
