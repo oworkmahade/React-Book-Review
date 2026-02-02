@@ -16,8 +16,13 @@ const Book = ({ book }) => {
 
         {/* Tags */}
         <div className="flex gap-2 mt-4">
-          <span className="px-3 py-1 text-sm text-green-600 bg-green-100 rounded-full">
-            {book.hashtag}
+          <span className="flex flex-row gap-4 px-3 py-1 text-sm text-green-600 rounded-full">
+            {book.hashtag.map((tag, index) => (
+              <span className="px-2 py-1 bg-green-100 rounded-lg" key={index}>
+                {" "}
+                {tag}
+              </span>
+            ))}
           </span>
         </div>
 
