@@ -22,8 +22,6 @@ const BookDetails = () => {
     );
   }
 
-  console.log(selectedBook);
-
   return (
     <div className="max-w-6xl p-6 mx-auto mt-24 bg-white shadow-md rounded-xl">
       <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
@@ -49,36 +47,34 @@ const BookDetails = () => {
           {/* Review */}
           <p className="mb-1 font-semibold">Review :</p>
           <p className="mb-4 leading-relaxed text-gray-600">
-            Sit amet consectetur. Interdum porta pulvinar non sit aliquam.
-            Aenean pulvinar blandit vel non enim elementum penatibus
-            pellentesque acc. Nec accumsan euismod nulla adipiscing lectus.
-            Morbi elementum a auctor erat diam tellus. Fermentum faucibus nulla
-            enim ornare.
+            {selectedBook.review}
           </p>
 
           {/* Tags */}
           <div className="flex gap-3 mb-6">
-            <span className="px-3 py-1 text-sm text-green-600 bg-green-100 rounded-full">
-              #Young Adult
-            </span>
-            <span className="px-3 py-1 text-sm text-green-600 bg-green-100 rounded-full">
-              #Identity
-            </span>
+            {selectedBook.hashtag.map((tag) => (
+              <span
+                className="px-3 py-1 text-sm bg-[#dcfce7] rounded-lg"
+                key={tag}
+              >
+                {tag}
+              </span>
+            ))}
           </div>
 
           {/* Meta Info */}
           <div className="grid grid-cols-2 mb-6 text-gray-700 gap-y-3">
             <p>Number of Pages:</p>
-            <p className="font-semibold">281</p>
+            <p className="font-semibold">{selectedBook.pages}</p>
 
             <p>Publisher:</p>
-            <p className="font-semibold">J.B Lippincott & Co.</p>
+            <p className="font-semibold">{selectedBook.publisher}</p>
 
             <p>Year of Publishing:</p>
-            <p className="font-semibold">1960</p>
+            <p className="font-semibold">{selectedBook.year}</p>
 
             <p>Rating:</p>
-            <p className="font-semibold">4.8</p>
+            <p className="font-semibold">{selectedBook.rating}</p>
           </div>
 
           {/* Buttons */}
