@@ -22,6 +22,14 @@ const BookDetails = () => {
     );
   }
 
+  const handleRead = (id) => {
+    console.log("read clicked for book ID:", id);
+  };
+
+  const handleWishlist = (id) => {
+    console.log("wishlist clicked for book ID:", id);
+  };
+
   return (
     <div className="max-w-6xl p-6 mx-auto mt-24 bg-white shadow-md rounded-xl">
       <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
@@ -79,10 +87,16 @@ const BookDetails = () => {
 
           {/* Buttons */}
           <div className="flex gap-4">
-            <button className="px-6 py-2 transition border border-gray-300 rounded-lg hover:bg-gray-100">
+            <button
+              onClick={() => handleRead(id)}
+              className="px-6 py-2 transition border border-gray-300 rounded-lg hover:bg-gray-100"
+            >
               Read
             </button>
-            <button className="px-6 py-2 text-white transition rounded-lg bg-sky-500 hover:bg-sky-600">
+            <button
+              onClick={() => handleWishlist(id)}
+              className="px-6 py-2 text-white transition rounded-lg bg-sky-500 hover:bg-sky-600"
+            >
               Wishlist
             </button>
           </div>
