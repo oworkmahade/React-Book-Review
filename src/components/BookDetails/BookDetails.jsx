@@ -13,7 +13,7 @@ const BookDetails = () => {
     fetch("/books.json")
       .then((res) => res.json())
       .then((data) => {
-        const book = data.find((b) => b.id === id);
+        const book = data.find((b) => b.id === Number(id));
         setSelectedBook(book);
       });
   }, [id]);
@@ -64,7 +64,7 @@ const BookDetails = () => {
 
           {/* Tags */}
           <div className="flex gap-3 mb-6">
-            {selectedBook.hashtag.map((tag) => (
+            {selectedBook.hashtag?.map((tag) => (
               <span
                 className="px-3 py-1 text-sm bg-[#dcfce7] rounded-lg"
                 key={tag}
@@ -92,13 +92,13 @@ const BookDetails = () => {
           {/* Buttons */}
           <div className="flex gap-4">
             <button
-              onClick={() => handleRead(id)}
+              onClick={() => handleRead(Number(id))}
               className="px-6 py-2 transition border border-gray-300 rounded-lg hover:bg-gray-100"
             >
               Read
             </button>
             <button
-              onClick={() => handleWishlist(id)}
+              onClick={() => handleWishlist(Number(id))}
               className="px-6 py-2 text-white transition rounded-lg bg-sky-500 hover:bg-sky-600"
             >
               Wishlist
