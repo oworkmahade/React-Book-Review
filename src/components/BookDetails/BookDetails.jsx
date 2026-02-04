@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import {
+  saveReadItemToLocalStorage,
+  saveWishlistToLocalStorage,
+} from "../../utility/localStorage";
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -9,7 +13,7 @@ const BookDetails = () => {
     fetch("/books.json")
       .then((res) => res.json())
       .then((data) => {
-        const book = data.find((b) => b.id === Number(id));
+        const book = data.find((b) => b.id === id);
         setSelectedBook(book);
       });
   }, [id]);
@@ -22,12 +26,12 @@ const BookDetails = () => {
     );
   }
 
-  const handleRead = (id) => {
-    console.log("read clicked for book ID:", id);
+  const handleRead = (readDataId) => {
+    saveReadItemToLocalStorage(readDataId);
   };
 
-  const handleWishlist = (id) => {
-    console.log("wishlist clicked for book ID:", id);
+  const handleWishlist = (wishlistDataId) => {
+    saveWishlistToLocalStorage(wishlistDataId);
   };
 
   return (

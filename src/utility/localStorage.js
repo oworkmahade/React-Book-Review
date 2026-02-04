@@ -10,15 +10,22 @@ const getStoredWishlistItem = () => {
 
 const saveReadItemToLocalStorage = (readDataId) => {
   const storedReadItem = getStoredReadItem();
-  const updateReadItem = [...storedReadItem, readDataId];
-  localStorage.setItem("readData", JSON.stringify(updateReadItem));
+
+  if (!storedReadItem.includes(readDataId)) {
+    const updateReadItem = [...storedReadItem, readDataId];
+    localStorage.setItem("readData", JSON.stringify(updateReadItem));
+  }
 };
 
 const saveWishlistToLocalStorage = (wishlistDataId) => {
   const storedWishlistItem = getStoredWishlistItem();
-  const updateWishlistItem = [...storedWishlistItem, wishlistDataId];
-  localStorage.setItem("wishlistData", JSON.stringify(updateWishlistItem));
+
+  if (!storedWishlistItem.includes(wishlistDataId)) {
+    const updateWishlistItem = [...storedWishlistItem, wishlistDataId];
+    localStorage.setItem("wishlistData", JSON.stringify(updateWishlistItem));
+  }
 };
+
 export {
   getStoredReadItem,
   getStoredWishlistItem,
