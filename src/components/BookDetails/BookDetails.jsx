@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import {
+  getStoredReadItem,
+  getStoredWishlistItem,
   saveReadItemToLocalStorage,
   saveWishlistToLocalStorage,
 } from "../../utility/localStorage";
+import { toast, ToastContainer } from "react-toastify";
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -27,11 +30,24 @@ const BookDetails = () => {
   }
 
   const handleRead = (readDataId) => {
-    saveReadItemToLocalStorage(readDataId);
+    const storedReadItem = getStoredReadItem();
+    if (storedReadItem.includes(readDataId)) {
+      toast("Book already marked as read!");
+    } else {
+      saveReadItemToLocalStorage(readDataId);
+      toast("Book marked as read!");
+    }
   };
 
   const handleWishlist = (wishlistDataId) => {
-    saveWishlistToLocalStorage(wishlistDataId);
+    const storedWishlistItem = getStoredWishlistItem();
+
+    if (storedWishlistItem.includes(wishlistDataId)) {
+      toast("Book already in wishlist!");
+    } else {
+      saveWishlistToLocalStorage(wishlistDataId);
+      toast("Book added to wishlist!");
+    }
   };
 
   return (
@@ -106,6 +122,7 @@ const BookDetails = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
