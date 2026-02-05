@@ -20,9 +20,18 @@ const saveWishlistToLocalStorage = (wishlistDataId) => {
   localStorage.setItem("wishlistData", JSON.stringify(updateWishlistItem));
 };
 
+const removeWishlistItemFromLocalStorage = (wishlistDataId) => {
+  const storedWishlistItem = getStoredWishlistItem();
+  const updateWishlistItem = storedWishlistItem.filter(
+    (id) => id !== wishlistDataId,
+  );
+  localStorage.setItem("wishlistData", JSON.stringify(updateWishlistItem));
+};
+
 export {
   getStoredReadItem,
   getStoredWishlistItem,
   saveReadItemToLocalStorage,
   saveWishlistToLocalStorage,
+  removeWishlistItemFromLocalStorage,
 };

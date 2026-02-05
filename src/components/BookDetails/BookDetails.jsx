@@ -5,6 +5,7 @@ import {
   getStoredWishlistItem,
   saveReadItemToLocalStorage,
   saveWishlistToLocalStorage,
+  removeWishlistItemFromLocalStorage,
 } from "../../utility/localStorage";
 import { toast, ToastContainer } from "react-toastify";
 
@@ -30,23 +31,41 @@ const BookDetails = () => {
   }
 
   const handleRead = (readDataId) => {
+    const storedWishlistItem = getStoredWishlistItem();
     const storedReadItem = getStoredReadItem();
-    if (storedReadItem.includes(readDataId)) {
-      toast("Book already marked as read!");
-    } else {
+
+    if (
+      storedWishlistItem.includes(readDataId) &&
+      !storedReadItem.includes(readDataId)
+    ) {
+      removeWishlistItemFromLocalStorage(readDataId);
       saveReadItemToLocalStorage(readDataId);
       toast("Book marked as read!");
+    } else if (
+      !storedWishlistItem.includes(readDataId) &&
+      !storedReadItem.includes(readDataId)
+    ) {
+      saveReadItemToLocalStorage(readDataId);
+      toast("Book marked as read!");
+    } else if (storedReadItem.includes(readDataId)) {
+      toast("Book already marked as read!");
     }
   };
 
   const handleWishlist = (wishlistDataId) => {
-    const storedWishlistItem = getStoredWishlistItem();
+    const storedReadItem = getStoredReadItem();
 
-    if (storedWishlistItem.includes(wishlistDataId)) {
-      toast("Book already in wishlist!");
+    if (storedReadItem.includes(wishlistDataId)) {
+      toast("Book already marked as read!");
     } else {
-      saveWishlistToLocalStorage(wishlistDataId);
-      toast("Book added to wishlist!");
+      const storedWishlistItem = getStoredWishlistItem();
+
+      if (storedWishlistItem.includes(wishlistDataId)) {
+        toast("Book already in wishlist!");
+      } else {
+        saveWishlistToLocalStorage(wishlistDataId);
+        toast("Book added to wishlist!");
+      }
     }
   };
 
