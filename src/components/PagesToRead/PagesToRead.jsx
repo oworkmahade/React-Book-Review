@@ -1,6 +1,18 @@
 import { useEffect, useState } from "react";
 import { getStoredReadItem } from "../../utility/localStorage";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  Cell,
+} from "recharts";
 import ShapeBar from "../ShapeBar/ShapeBar";
+
+const colors = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#FF0000"];
 
 function PagesToRead() {
   const [readBooks, setReadBooks] = useState([]);
@@ -18,15 +30,21 @@ function PagesToRead() {
   }, []);
 
   return (
-    <div className="max-w-6xl px-6 py-12 mx-auto bg-gray-50 rounded-xl">
-      <h2 className="mb-10 text-3xl font-bold text-center">Pages to Read</h2>
+    <div className="w-full h-[750px] p-16 bg-slate-200 rounded-2xl mt-12">
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart data={readBooks}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="title" />
+          <YAxis />
+          <Tooltip />
 
-      {/* Chart */}
-      <div className="relative h-[420px] border-l border-b border-dashed px-10 flex items-end gap-10">
-        {readBooks.map((book, index) => (
-          <ShapeBar key={book.id} book={book} books={readBooks} index={index} />
-        ))}
-      </div>
+          <Bar dataKey="pages" shape={<ShapeBar />} label={{ position: "top" }}>
+            {readBooks.map((_, index) => (
+              <Cell key={index} fill={colors[index % colors.length]} />
+            ))}
+          </Bar>
+        </BarChart>
+      </ResponsiveContainer>
     </div>
   );
 }
