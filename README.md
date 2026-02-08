@@ -1,16 +1,58 @@
-# React + Vite
+# 📚 Book Vibe – Your Personal Reading Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🔗 **Live Site:** 
+https://calm-cassata-5139ff.netlify.app/
+https://calm-hot.surge.sh/
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📖 About This Project
 
-## React Compiler
+**Book Vibe** is a React-based book tracking website where users can explore books, mark them as *Read* or *Wishlist*, and visualize their reading progress using a **custom shape bar chart**. The application is built with modern React tools and focuses on clean UI, smooth routing, and meaningful user interaction.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ✨ Key Features & Characteristics
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 📚 **Book Listing System**  
+  Browse a collection of books loaded from JSON data with detailed information.
+
+- ✅ **Read & Wishlist Management**  
+  Users can add books to *Read* or *Wishlist*, stored persistently using `localStorage`.
+
+- 📊 **Custom Shape Bar Chart**  
+  A visually appealing custom shape bar chart shows total pages of read books (no default charts used).
+
+- 🔀 **Sorting Functionality**  
+  Read and Wishlist books can be sorted by rating, number of pages, and publishing year.
+
+- 🚀 **Smooth Client-Side Routing**  
+  Implemented with React Router, including dynamic routes and a custom 404 page.
+
+- 🌐 **Deployed on Netlify**  
+  Fully functional live deployment with SPA routing support.
+
+---
+
+## 🛠️ Technologies Used
+
+- React + Vite  
+- React Router DOM  
+- Recharts (Custom Shape Bar)  
+- Tailwind CSS  
+- Local Storage  
+- Netlify Deployment
+- Surge Deployment 
+
+---
+
+## ⚠️ Notes
+
+- Client-side routing is handled properly using Netlify redirects.
+- The chart is implemented as a **custom shape bar**, not a line or default bar chart.
+
+---
+
+## 👨‍💻 Author
+
+**Md. Mahade Hasan**  
+Instructor (Computer), Sherpur Polytechnic Institute  
