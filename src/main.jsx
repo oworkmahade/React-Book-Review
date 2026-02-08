@@ -9,6 +9,7 @@ import ListedBooks from "./components/ListedBooks/ListedBooks";
 import PagesToRead from "./components/PagesToRead/PagesToRead";
 import BookDetails from "./components/BookDetails/BookDetails";
 import ListedBook from "./components/ListedBook/ListedBook";
+import ShapeBar from "./components/ShapeBar/ShapeBar";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "/book/:id",
         element: <BookDetails />,
+      },
+      {
+        path: "/shapebar",
+        element: <ShapeBar />,
       },
     ],
   },

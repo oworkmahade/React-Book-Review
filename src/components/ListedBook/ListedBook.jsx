@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const ListedBook = ({ book }) => {
-  console.log(book);
   return (
     <div className="mt-8 space-y-6">
       <div className="flex gap-6 p-6 border rounded-xl">
