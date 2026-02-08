@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import {
   getStoredReadItem,
   getStoredWishlistItem,
@@ -10,6 +10,11 @@ import {
 import { toast, ToastContainer } from "react-toastify";
 
 const BookDetails = () => {
+  const navigate = useNavigate();
+  const handleBack = () => {
+    navigate(-1);
+  };
+
   const { id } = useParams();
   const [selectedBook, setSelectedBook] = useState(null);
 
@@ -137,6 +142,13 @@ const BookDetails = () => {
               className="px-6 py-2 text-white transition rounded-lg bg-sky-500 hover:bg-sky-600"
             >
               Wishlist
+            </button>
+
+            <button
+              onClick={handleBack}
+              className="px-6 py-2 transition border border-yellow-300 rounded-lg hover:bg-gray-100"
+            >
+              Back
             </button>
           </div>
         </div>
