@@ -1,8 +1,8 @@
 # 📚 Book Vibe – Your Personal Reading Tracker
 
 🔗 **Live Site:** 
-https://calm-cassata-5139ff.netlify.app/
-https://calm-hot.surge.sh/
+netlify #  https://calm-cassata-5139ff.netlify.app/
+surge # https://calm-hot.surge.sh/
 
 
 ## 📖 About This Project
